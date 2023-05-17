@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*表格样式*/
+        table {
+            width: 90%;
+            background: #ccc;
+            margin: 10px auto;
+            border-collapse: collapse;
+            /*border-collapse:collapse合并内外边距
+        (去除表格单元格默认的2个像素内外边距*/
+        }
+        th,
+        td {
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        th {
+            background: #eee;
+            font-weight: normal;
+        }
+        tr {
+            background: #fff;
+        }
+        tr:hover {
+            background: #cc0;
+        }
+        td a {
+            color: #06f;
+            text-decoration: none;
+        }
+        td a:hover {
+            color: #06f;
+            text-decoration: underline;
+        }
+        .box{
+           display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+
+    <tr>
+        <th>shopname</th>
+        <th>amount</th>
+        <th>price</a></th>
+
+    </tr>
+    <tr th:each="employee:${shops}">
+        <td th:text="${employee.shopname}"></td>
+        <td th:text="${employee.amount}"></td>
+        <td th:text="${employee.price}" id="accept"></td>
+    </tr>
+</table>
+<div class="box">
+<button>返回到上一级</button>
+</div>
+</body>
+</html>
